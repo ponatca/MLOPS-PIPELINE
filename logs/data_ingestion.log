@@ -1,0 +1,4 @@
+2026-09-18 12:38:41,408 - data_ingestion - DEBUG - Parameters retrieved from /Users/pon/Desktop/MLOPS-PIPELINE/params.yaml
+2026-09-18 12:38:41,415 - data_ingestion - DEBUG - Data loaded from /Users/pon/Desktop/MLOPS-PIPELINE/experiments/spam.csv
+2026-09-18 12:38:41,416 - data_ingestion - DEBUG - Data preprocessing completed
+2026-09-18 12:38:41,426 - data_ingestion - DEBUG - Train and test data saved to ./data/raw

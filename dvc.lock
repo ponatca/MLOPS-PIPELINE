@@ -1,0 +1,94 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/mlops_pipeline/data_ingestion.py
+    deps:
+    - path: src/mlops_pipeline/data_ingestion.py
+      hash: md5
+      md5: 7e1ecb95fd02ec4744fe80a1658cd60d
+      size: 3531
+    params:
+      params.yaml:
+        data_ingestion.test_size: 0.2
+    outs:
+    - path: data/raw
+      hash: md5
+      md5: 6a4d11ab83c20d7412f4696595c0b4d1.dir
+      size: 479272
+      nfiles: 2
+  data_preprocessing:
+    cmd: python src/mlops_pipeline/data_preprocessing.py
+    deps:
+    - path: data/raw
+      hash: md5
+      md5: 6a4d11ab83c20d7412f4696595c0b4d1.dir
+      size: 479272
+      nfiles: 2
+    - path: src/mlops_pipeline/data_preprocessing.py
+      hash: md5
+      md5: 158130fa3ada2ed96ada460b539d42e9
+      size: 3864
+    outs:
+    - path: data/interim
+      hash: md5
+      md5: 1997423ed1ffeb5f92102531aff951a8.dir
+      size: 254975
+      nfiles: 2
+  feature_engineering:
+    cmd: python src/mlops_pipeline/feature_engineering.py
+    deps:
+    - path: data/interim
+      hash: md5
+      md5: 1997423ed1ffeb5f92102531aff951a8.dir
+      size: 254975
+      nfiles: 2
+    - path: src/mlops_pipeline/feature_engineering.py
+      hash: md5
+      md5: 7736dbc754bde064e146296cf1ed83e3
+      size: 3832
+    params:
+      params.yaml:
+        feature_engineering.max_features: 35
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: b0197fbb9c5127c72ad0d01ba9f54fe3.dir
+      size: 829499
+      nfiles: 2
+  model_building:
+    cmd: python src/mlops_pipeline/model_building.py
+    deps:
+    - path: data/processed
+      hash: md5
+      md5: b0197fbb9c5127c72ad0d01ba9f54fe3.dir
+      size: 829499
+      nfiles: 2
+    - path: src/mlops_pipeline/model_building.py
+      hash: md5
+      md5: 90ecdca00a23a327a6a8eaa3d908ef4d
+      size: 4321
+    params:
+      params.yaml:
+        model_building.n_estimators: 22
+        model_building.random_state: 2
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 0fe156ae563f6dff47574b59357cdfb2
+      size: 720199
+  model_evaluation:
+    cmd: python src/mlops_pipeline/model_evaluation.py
+    deps:
+    - path: models/model.pkl
+      hash: md5
+      md5: 0fe156ae563f6dff47574b59357cdfb2
+      size: 720199
+    - path: src/mlops_pipeline/model_evaluation.py
+      hash: md5
+      md5: cd23e9951ac0f3fb3fd509df1865bc06
+      size: 4541
+    outs:
+    - path: reports/metrics.json
+      hash: md5
+      md5: 531c3ea7884f3b816aa2476453253e64
+      size: 140

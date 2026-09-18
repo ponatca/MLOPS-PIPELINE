@@ -1,0 +1,6 @@
+2026-09-18 12:38:59,277 - feature_engineering - DEBUG - Parameters retrieved from /Users/pon/Desktop/MLOPS-PIPELINE/params.yaml
+2026-09-18 12:38:59,280 - feature_engineering - DEBUG - Data loaded and NaNs filled from ./data/interim/train_processed.csv
+2026-09-18 12:38:59,281 - feature_engineering - DEBUG - Data loaded and NaNs filled from ./data/interim/test_processed.csv
+2026-09-18 12:38:59,309 - feature_engineering - DEBUG - tfidf applied and data transformed
+2026-09-18 12:38:59,345 - feature_engineering - DEBUG - Data saved to ./data/processed/train_tfidf.csv
+2026-09-18 12:38:59,354 - feature_engineering - DEBUG - Data saved to ./data/processed/test_tfidf.csv
