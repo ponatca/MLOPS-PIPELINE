@@ -5,3 +5,12 @@
 2026-09-18 10:25:49,912 - model_evaluation - DEBUG - Data loaded from ./data/processed/test_tfidf.csv
 2026-09-18 10:25:49,930 - model_evaluation - DEBUG - Model evaluation metrics calculated
 2026-09-18 10:25:52,068 - model_evaluation - ERROR - Failed to complete the model evaluation process: Empty git repo
+2026-09-18 10:48:37,129 - model_evaluation - DEBUG - Parameters retrieved from /Users/pon/Desktop/MLOPS-PIPELINE/params.yaml
+2026-09-18 10:48:37,269 - model_evaluation - DEBUG - Model loaded from ./models/model.pkl
+2026-09-18 10:48:37,271 - model_evaluation - DEBUG - Data loaded from ./data/processed/test_tfidf.csv
+2026-09-18 10:48:37,285 - model_evaluation - DEBUG - Model evaluation metrics calculated
+2026-09-18 10:48:37,570 - model_evaluation - ERROR - Failed to complete the model evaluation process: Git user name and email must be configured
+2026-09-18 10:51:13,178 - model_evaluation - DEBUG - Parameters retrieved from /Users/pon/Desktop/MLOPS-PIPELINE/params.yaml
+2026-09-18 10:51:13,317 - model_evaluation - DEBUG - Model loaded from ./models/model.pkl
+2026-09-18 10:51:13,320 - model_evaluation - DEBUG - Data loaded from ./data/processed/test_tfidf.csv
+2026-09-18 10:51:13,332 - model_evaluation - DEBUG - Model evaluation metrics calculated
