@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "awscli>=1.46.1",
+    "dvc[s3]>=3.67.1",
     "dvclive>=3.49.1",
     "matplotlib>=3.11.2",
     "nltk>=3.10.3",
